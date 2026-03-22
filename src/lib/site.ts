@@ -22,7 +22,7 @@ export const site = {
   location: "Bochum, Germany (location flexible)",
   linkedin: "https://www.linkedin.com/in/sameh-bakleh-b177b1189",
   /** Full profile URL — not just https://github.com/ (breaks CTAs until set) */
-  github: "https://github.com/samhbkeng1992",
+  github: "https://github.com/samhbk",
   workAuth: "Chancenkarte — Eligible to work in Germany",
   availability: "Immediate",
   /** Long-form availability for recruiters */
