@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Material Design 3 — dark color scheme (aligned with M3 surface roles) */
+:root {
+  --background: #131218;
+  --foreground: #e6e1e5;
+  --surface: #131218;
+  --surface-dim: #131218;
+  --surface-container-lowest: #0e0c12;
+  --surface-container-low: #1b1920;
+  --surface-container: #211f26;
+  --surface-container-high: #2b2930;
+  --surface-container-highest: #36343b;
+  --on-surface: #e6e1e5;
+  --on-surface-variant: #cac4d0;
+  --primary: #4ade80;
+  --on-primary: #042f1a;
+  --primary-container: #14532d;
+  --on-primary-container: #bbf7d0;
+  /* Secondary accent — links & secondary highlights (M3 secondary role) */
+  --secondary: #67e8f9;
+  --on-secondary: #003544;
+  --secondary-container: #0e3a44;
+  --on-secondary-container: #a5f3fc;
+  --outline: #938f99;
+  --outline-variant: #49454f;
+  --terminal-border: #49454f;
+  --accent: #4ade80;
+  --muted: #cac4d0;
+  --grid: rgba(74, 222, 128, 0.028);
+  --state-hover: rgba(74, 222, 128, 0.08);
+  --state-pressed: rgba(74, 222, 128, 0.12);
+  --shape-corner-extra-large: 1.75rem; /* 28dp — M3 large component */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  color: var(--on-surface);
+  background: var(--surface);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  letter-spacing: 0.01em;
+}
+
+/* Minimal grid — texture without noise */
+.bg-terminal {
+  background-color: var(--surface);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-terminal::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(19, 18, 24, 0.52) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(19, 18, 24, 0.42) 100%
+  );
+  z-index: 12;
+  opacity: 1;
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(74, 222, 128, 0.25);
+}
+
+/* Custom cursor: hide system cursor (inputs keep I-beam) */
+html.custom-cursor-active body * {
+  cursor: none !important;
+}
+
+html.custom-cursor-active input,
+html.custom-cursor-active textarea,
+html.custom-cursor-active [contenteditable="true"] {
+  cursor: text !important;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+@layer utilities {
+  .font-mono-strict {
+    font-family: var(--font-jetbrains), ui-monospace, monospace;
+  }
+  /** M3 large shape — cards, dialogs, expanded tiles */
+  .rounded-shape-xl {
+    border-radius: var(--shape-corner-extra-large);
+  }
+  .rounded-shape-full {
+    border-radius: 9999px;
+  }
+}
