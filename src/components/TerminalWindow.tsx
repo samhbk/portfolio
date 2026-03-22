@@ -25,7 +25,7 @@ export function TerminalWindow({ title, children, className = "", path }: Props)
               transition: { duration: 0.28, ease: [0.2, 0.8, 0.2, 1] },
             }
       }
-      className={`group overflow-hidden rounded-shape-xl border border-outline-variant/45 bg-surface-container shadow-elevation-1 transition-[border-color,box-shadow] duration-200 hover:border-outline/55 hover:shadow-elevation-2 ${className}`}
+      className={`group overflow-hidden rounded-shape-xl border border-violet-500/15 bg-surface-container shadow-elevation-1 transition-[border-color,box-shadow] duration-200 hover:border-secondary/35 hover:shadow-elevation-2 hover:shadow-glow-cyan ${className}`}
     >
       <div className="flex items-center gap-3 border-b border-outline-variant/40 px-4 py-3 sm:px-5">
         <div className="min-w-0 flex-1">

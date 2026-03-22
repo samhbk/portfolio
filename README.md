@@ -29,15 +29,11 @@ npm start
 2. **Import:** [New project](https://vercel.com/new) → select the repo. Framework **Next.js** is auto-detected; `vercel.json` pins **`npm ci`** for reproducible installs from `package-lock.json`.
 3. **Node:** `package.json` declares **`engines.node >= 20.9`**; Vercel will use a compatible runtime (see also `.nvmrc`).
 4. **Canonical URL (recommended):** add **`NEXT_PUBLIC_SITE_URL`** = your live URL (e.g. `https://your-name.vercel.app` or your custom domain). Prefer scoping this to **Production** only so Preview deployments keep correct per-preview URLs via **`VERCEL_URL`**.
-5. **Contact form:** optional **`RESEND_API_KEY`** (plus **`RESEND_FROM`**, **`CONTACT_TO_EMAIL`** if needed). See `.env.example`. Without a key, submit still works via the mail-client fallback.
-6. **Content:** **`site.github`** in `src/lib/site.ts` should be your profile URL (e.g. [github.com/samhbk](https://github.com/samhbk)). On GitHub: **Settings → Public profile → Website** can point to your deployed Vercel URL so the profile links back to this site.
+5. **Contact:** there is **no server form** — the Contact section uses **`mailto:`** to **`site.email`**. No email API env vars.
+6. **Content:** set **`site.github`** in `src/lib/site.ts` to your real profile URL (`githubProfileHref()` hides GitHub CTAs if it’s only `https://github.com`).
 
 `devIndicators` is disabled in `next.config.ts`. Response headers for basic hardening are set in the same file.
 
-## Contact form
+## Contact
 
-- **Production:** add **`RESEND_API_KEY`** in Vercel (see [Resend](https://resend.com)). Optional: **`RESEND_FROM`**, **`CONTACT_TO_EMAIL`**.
-- **Local:** you can paste a key in **`src/lib/resendContactConfig.ts`** instead.
-- If Resend isn’t configured, submit falls back to the visitor’s mail app with a draft.
-
-After you verify a domain in Resend, set **`RESEND_FROM`** to an address on that domain.
+The Contact section shows **`contact_info.json`** and a **mailto** link to **`site.email`**. No form or Resend.

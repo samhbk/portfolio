@@ -17,7 +17,7 @@ export function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="relative z-[60] border-t border-outline-variant/35 px-4 py-12 sm:px-6"
+      className="relative z-[60] border-t border-violet-500/25 px-4 py-12 shadow-[0_-12px_40px_-8px_rgba(139,92,246,0.12)] sm:px-6"
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-center text-xs text-on-surface-variant sm:flex-row sm:text-left">
         <p>

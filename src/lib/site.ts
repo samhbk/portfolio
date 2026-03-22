@@ -22,7 +22,7 @@ export const site = {
   location: "Bochum, Germany (location flexible)",
   linkedin: "https://www.linkedin.com/in/sameh-bakleh-b177b1189",
   /** Full profile URL — not just https://github.com/ (breaks CTAs until set) */
-  github: "https://github.com/samhbk",
+  github: "https://github.com/samhbkeng1992",
   workAuth: "Chancenkarte — Eligible to work in Germany",
   availability: "Immediate",
   /** Long-form availability for recruiters */
@@ -482,7 +482,7 @@ export const navItems = [
   { id: "projects", label: "Projects", file: "projects/" },
   { id: "showcase", label: "Showcase", file: "live/refs" },
   { id: "stats", label: "Stats", file: "metrics.db" },
-  { id: "contact", label: "Contact", file: "contact.exe" },
+  { id: "contact", label: "Contact", file: "contact.sh" },
 ] as const;
 
 export const loadedModules = [

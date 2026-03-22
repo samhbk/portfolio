@@ -16,7 +16,7 @@ function highlightLine(line: string) {
     return (
       <>
         <span className="text-on-surface-variant/70">{lead}</span>
-        <span className="text-violet-400/95">{word}</span>
+        <span className="text-tertiary">{word}</span>
         <span className="text-on-surface/90">{rest}</span>
       </>
     );
@@ -42,9 +42,9 @@ export function HeroSection() {
   const btnFilled =
     "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-primary px-5 text-sm font-medium text-on-primary shadow-elevation-1 transition-[box-shadow,background-color] hover:shadow-elevation-2 active:shadow-elevation-1 sm:min-w-[8.75rem] sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-surface";
   const btnOutlined =
-    "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-transparent px-5 text-sm font-medium text-primary transition-colors hover:bg-primary/[0.08] sm:min-w-[8.75rem] sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 focus-visible:ring-offset-surface";
+    "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-secondary/45 bg-transparent px-5 text-sm font-medium text-secondary transition-colors hover:bg-secondary/[0.1] sm:min-w-[8.75rem] sm:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface";
   const linkText =
-    "inline-flex min-h-11 items-center justify-center rounded-full px-4 text-sm font-medium text-primary no-underline transition-colors hover:bg-primary/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 focus-visible:ring-offset-surface";
+    "inline-flex min-h-11 items-center justify-center rounded-full px-4 text-sm font-medium text-tertiary no-underline transition-colors hover:bg-tertiary/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary/35 focus-visible:ring-offset-2 focus-visible:ring-offset-surface";
 
   return (
     <section
@@ -53,7 +53,7 @@ export function HeroSection() {
       className="relative scroll-mt-24 overflow-hidden border-b border-outline-variant/35 px-4 pb-16 pt-[calc(5.5rem+1.25rem)] sm:px-6 sm:pb-20 sm:pt-[calc(5.5rem+2rem)] md:pb-24 md:pt-[calc(5.5rem+2.5rem)]"
     >
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-primary/[0.055] via-transparent to-transparent sm:h-56"
+        className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-fuchsia-500/[0.12] via-primary/[0.06] to-cyan-500/[0.04] sm:h-64"
         aria-hidden
       />
       <div className="relative mx-auto max-w-6xl">
@@ -66,7 +66,7 @@ export function HeroSection() {
           {/* Meta strip — compact, aligned to 4px grid */}
           <motion.div
             variants={itemVariants}
-            className="mb-7 inline-flex max-w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-full border border-outline-variant/50 bg-surface-container-high/72 py-2 pl-4 pr-4 shadow-elevation-1 backdrop-blur-sm sm:mb-9 sm:gap-x-4 sm:pl-5 sm:pr-5"
+            className="mb-7 inline-flex max-w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-full border border-white/[0.08] bg-gradient-to-r from-violet-500/[0.12] via-surface-container-high/75 to-cyan-500/[0.1] py-2 pl-4 pr-4 shadow-elevation-1 shadow-glow-violet backdrop-blur-md sm:mb-9 sm:gap-x-4 sm:pl-5 sm:pr-5"
           >
             <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant sm:text-[11px]">
               &lt;Platform.Profile /&gt;
@@ -77,7 +77,7 @@ export function HeroSection() {
             </span>
             <span className="hidden h-3 w-px bg-outline-variant/80 sm:block" aria-hidden />
             <span className="font-mono text-[10px] text-on-surface-variant sm:text-[11px]">
-              API <span className="text-primary">· healthy</span>
+              API <span className="text-secondary">· healthy</span>
             </span>
           </motion.div>
 
@@ -89,22 +89,22 @@ export function HeroSection() {
                 variants={itemVariants}
                 className="mb-4 max-w-[20ch] text-4xl font-bold leading-[1.02] tracking-[-0.02em] sm:mb-5 sm:max-w-none sm:text-5xl sm:leading-[1.01] sm:tracking-tight md:text-6xl md:leading-[0.99] lg:mb-6 lg:text-7xl lg:leading-[0.98]"
               >
-                <span className="bg-gradient-to-br from-on-surface from-35% via-on-surface to-primary/75 bg-clip-text text-transparent">
+                <span className="text-gradient-brand drop-shadow-[0_0_40px_rgba(52,211,153,0.15)]">
                   {site.name}
                 </span>
               </motion.h1>
               <motion.h2
                 variants={itemVariants}
-                className="mb-6 max-w-[52rem] text-base font-semibold leading-snug text-on-surface/92 sm:mb-7 sm:text-lg sm:leading-snug md:text-xl md:leading-snug lg:mb-8 lg:text-2xl lg:leading-tight"
+                className="mb-6 max-w-[52rem] text-base font-semibold leading-snug text-on-surface/95 sm:mb-7 sm:text-lg sm:leading-snug md:text-xl md:leading-snug lg:mb-8 lg:text-2xl lg:leading-tight [&::selection]:bg-secondary/30 [&::selection]:text-on-surface"
               >
                 {headline}
               </motion.h2>
 
               <motion.p
                 variants={itemVariants}
-                className="mb-7 max-w-prose rounded-shape-xl border border-outline-variant/40 bg-surface-container/55 px-4 py-3.5 text-[0.9375rem] leading-[1.65] text-on-surface-variant shadow-elevation-1 backdrop-blur-sm sm:mb-9 sm:px-5 sm:py-4 sm:text-base sm:leading-relaxed"
+                className="mb-7 max-w-prose rounded-shape-xl border border-violet-400/25 bg-gradient-to-br from-surface-container/90 via-surface-container-low/95 to-cyan-950/30 px-4 py-3.5 text-[0.9375rem] leading-[1.65] text-on-surface-variant shadow-elevation-1 shadow-glow-cyan backdrop-blur-sm sm:mb-9 sm:px-5 sm:py-4 sm:text-base sm:leading-relaxed"
               >
-                <span className="mr-1.5 font-mono text-sm font-medium text-primary">&lt;Backend · Mobile /&gt;</span>
+                <span className="mr-1.5 font-mono text-sm font-medium text-secondary">&lt;Backend · Mobile /&gt;</span>
                 {site.tagline}
               </motion.p>
 
@@ -115,16 +115,23 @@ export function HeroSection() {
                 <span className="w-full font-mono text-[10px] font-medium uppercase tracking-wider text-on-surface-variant sm:mb-0 sm:mr-1 sm:inline sm:w-auto">
                   Core stack
                 </span>
-                {loadedModules.map((m) => (
-                  <motion.span
-                    key={m}
-                    whileHover={reduce ? undefined : { y: -2 }}
-                    transition={springLift}
-                    className="cursor-default rounded-full border border-outline-variant/45 bg-surface-container-low/90 px-3 py-1.5 font-mono text-[10px] font-medium text-primary sm:px-3.5 sm:py-1.5 sm:text-[11px]"
-                  >
-                    {m}
-                  </motion.span>
-                ))}
+                {loadedModules.map((m, i) => {
+                  const palette = [
+                    "border-primary/40 bg-primary/[0.07] text-primary shadow-[0_0_20px_rgba(52,211,153,0.12)]",
+                    "border-secondary/35 bg-secondary/[0.06] text-secondary shadow-[0_0_20px_rgba(34,211,238,0.1)]",
+                    "border-tertiary/35 bg-tertiary/[0.08] text-tertiary shadow-[0_0_20px_rgba(196,181,253,0.12)]",
+                  ];
+                  return (
+                    <motion.span
+                      key={m}
+                      whileHover={reduce ? undefined : { y: -2 }}
+                      transition={springLift}
+                      className={`cursor-default rounded-full border px-3 py-1.5 font-mono text-[10px] font-medium sm:px-3.5 sm:py-1.5 sm:text-[11px] ${palette[i % 3]}`}
+                    >
+                      {m}
+                    </motion.span>
+                  );
+                })}
               </motion.div>
 
               <motion.div variants={itemVariants} className="flex flex-col gap-2 sm:gap-2.5">
@@ -202,15 +209,17 @@ export function HeroSection() {
                     : {
                         y: -3,
                         boxShadow:
-                          "0 12px 32px -10px rgba(0,0,0,0.45), 0 0 0 1px rgba(74,222,128,0.12)",
-                        borderColor: "rgba(148, 143, 153, 0.55)",
+                          "0 16px 40px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(167,139,250,0.25), 0 0 48px -8px rgba(52,211,153,0.12)",
+                        borderColor: "rgba(167, 139, 250, 0.35)",
                         transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
                       }
                 }
-                className="flex flex-col rounded-shape-xl border border-outline-variant/45 bg-surface-container-high/88 p-3.5 font-mono text-[11px] leading-[1.5] shadow-elevation-2 backdrop-blur-sm transition-[border-color,box-shadow] sm:p-4 sm:text-xs"
+                className="flex flex-col rounded-shape-xl border border-violet-400/20 bg-surface-container-high/85 p-3.5 font-mono text-[11px] leading-[1.5] shadow-elevation-2 shadow-glow-violet backdrop-blur-sm transition-[border-color,box-shadow] sm:p-4 sm:text-xs"
               >
-                <div className="mb-2 flex shrink-0 items-center justify-between gap-3 border-b border-outline-variant/45 pb-2 text-on-surface-variant">
-                  <span className="truncate text-primary">engineer.ts</span>
+                <div className="mb-2 flex shrink-0 items-center justify-between gap-3 border-b border-outline-variant/40 pb-2 text-on-surface-variant">
+                  <span className="truncate bg-gradient-to-r from-secondary to-tertiary bg-clip-text font-medium text-transparent">
+                    engineer.ts
+                  </span>
                   <span className="shrink-0 tabular-nums text-[10px] sm:text-[11px]">
                     Ln 1–{lines.length}
                   </span>

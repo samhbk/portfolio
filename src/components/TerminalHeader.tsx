@@ -51,8 +51,10 @@ export function TerminalHeader() {
           className="group flex shrink-0 items-center gap-2.5 rounded-full pr-1 outline-none ring-primary/0 transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary/45"
           data-cursor-pointer
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-container text-sm font-semibold tracking-tight text-on-primary-container">
-            SB
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 via-primary to-cyan-400 p-[2px] shadow-md shadow-primary/30">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-sm font-semibold tracking-tight text-primary">
+              SB
+            </span>
           </span>
           <span className="hidden min-w-0 flex-col sm:flex">
             <span className="truncate text-sm font-medium leading-tight tracking-tight text-on-surface">
@@ -69,7 +71,7 @@ export function TerminalHeader() {
             className="scrollbar-none flex min-w-0 flex-1 items-center justify-start gap-1 overflow-x-auto py-1 sm:justify-center"
             aria-label="Primary"
           >
-            <div className="flex items-center gap-0.5 rounded-full bg-surface-container/90 p-1 ring-1 ring-outline/40">
+            <div className="flex items-center gap-0.5 rounded-full bg-surface-container/90 p-1 ring-1 ring-violet-500/25">
               {navItems.map(({ id, label }) => {
                 const isActive = active === id;
                 return (

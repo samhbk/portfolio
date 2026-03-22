@@ -12,28 +12,10 @@ import { StatsSection } from "@/components/StatsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { CommandPalette } from "@/components/CommandPalette";
-import { site } from "@/lib/site";
-
-function profileJsonLd() {
-  const base =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-  return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: site.name,
-    url: base,
-    sameAs: [site.linkedin, site.github],
-  };
-}
 
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd()) }}
-      />
       <CommandPalette />
       <CustomCursor />
       <ScrollProgress />

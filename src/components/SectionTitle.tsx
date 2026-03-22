@@ -20,7 +20,7 @@ export function SectionTitle({ children, step, kicker }: Props) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
-            className="font-mono text-[10px] font-medium tabular-nums tracking-widest text-on-surface-variant"
+            className="font-mono text-[10px] font-medium tabular-nums tracking-widest text-secondary/90"
           >
             {step}
           </motion.span>
@@ -37,7 +37,7 @@ export function SectionTitle({ children, step, kicker }: Props) {
       </div>
       <motion.div
         aria-hidden
-        className="mt-4 h-1 max-w-[4.5rem] rounded-full bg-primary/50"
+        className="bg-gradient-rule mt-4 h-1 max-w-[5rem] rounded-full opacity-90"
         initial={reduce ? undefined : { scaleX: 0, opacity: 0, transformOrigin: "left" }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         viewport={{ once: true, margin: "-80px" }}
